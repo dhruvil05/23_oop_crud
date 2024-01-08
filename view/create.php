@@ -1,4 +1,8 @@
-<?php session_start() ?>
+<?php 
+    $inactive = 10;
+    ini_set('session.gc_maxlifetime', $inactive);
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -68,6 +72,7 @@
             if (!empty($errors)) {
             // Display errors 
                 $_SESSION['createValidation'] = $errors;
+                $_SESSION['time'] = time();
                 header('location: /oop_crud/view/create.php');
             }else{
             // Perform form validation and database insertion here
@@ -89,7 +94,23 @@
 
     ?>
     <?php include "../includes/__header.php" ?>
+    <?php if(isset($_SESSION['createValidation'])){
 
+        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                    <strong>Please!</strong> Fill All The Fields.
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>";
+        
+        
+    } 
+    
+    if (isset($_SESSION['createValidation']) && (time() - $_SESSION['time'] > $inactive)) {
+        
+        session_unset();     // unset $_SESSION variable for this page
+        session_destroy();   // destroy session data
+    }
+    ?>
+    
     <div class="container" style="width:100%;">
         <h2 class="mb-5 mt-3">Add Student Record</h2>
         <form action="<?php basename($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data">
