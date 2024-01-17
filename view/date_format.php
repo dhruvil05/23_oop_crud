@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -93,20 +94,22 @@
             // );
             
             // echo $total;
-
+           
             
 
         ?>
-
-        <h1>Date and Time</h1>
-        
-        <form action="<?=$_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
-            <label for="file"> Upload </label>    
-            <input type="file" name="file" id="file">
-            <button type="submit">Submit</button>
-        </form>
-        <?php include "../includes/__footer.php" ?>
+        <div class="cursorPosition">
+            <h1>Date and Time</h1>
+            
+            <form action="<?=$_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
+                <label for="file"> Upload </label>    
+                <input type="file" name="file" id="file">
+                <button type="submit">Submit</button>
+            </form>
+            <?php include "../includes/__footer.php" ?>
+        </div>
         <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="../includes/_mouseEffect.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     </body>
