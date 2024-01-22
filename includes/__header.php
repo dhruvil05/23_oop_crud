@@ -13,7 +13,10 @@
                     <a class="nav-link" href="<?php echo "/oop_crud/view/create.php" ?>">Create</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">API</a>
+                    <a class="nav-link" href="<?php echo "/oop_crud/view/date_format.php" ?>">DateTime</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo "/oop_crud/view/text_effect.php" ?>">Text Effect</a>
                 </li>
             </ul>
             <!-- <span class="" style="margin-left: 10px;">

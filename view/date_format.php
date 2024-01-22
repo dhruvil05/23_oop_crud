@@ -98,16 +98,23 @@
             
 
         ?>
-        <div class="cursorPosition">
-            <h1>Date and Time</h1>
+        <div class="container cursorPosition">
+            <h1>DateTime & Color Picker</h1>
             
             <form action="<?=$_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
-                <label for="file"> Upload </label>    
-                <input type="file" name="file" id="file">
-                <button type="submit">Submit</button>
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+                    <input class="form-control" type="file" id="formFileMultiple" multiple>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleColorInput" class="form-label">Color picker</label>
+                    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+                </div>
             </form>
-            <?php include "../includes/__footer.php" ?>
         </div>
+
+        <?php include "../includes/__footer.php" ?>
         <!-- Option 1: Bootstrap Bundle with Popper -->
         <script src="../includes/_mouseEffect.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
